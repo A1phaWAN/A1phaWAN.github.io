@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyU</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        /* 左侧垂直导航栏样式 */
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 220px;
+            background-color: #8B0000; /* 酒红色 */
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            padding: 25px 0;
+            width: 100%;
+            gap: 15px;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: 600;
+            padding: 20px 30px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav-links {
+            list-style: none;
+            width: 100%;
+        }
+        
+        .nav-links li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border-left: 5px solid transparent;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .nav-links li a:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-left: 5px solid #FFD700;
+            padding-left: 35px;
+        }
+        
+        /* 页面内容区域 */
+        .content {
+            margin-left: 220px;
+            padding: 40px;
+            max-width: 1200px;
+            min-height: 100vh;
+        }
+        
+        /* 移动端样式 */
+        @media screen and (max-width: 768px) {
+            nav {
+                width: 60px;
+                overflow: hidden;
+            }
+            
+            .nav-container {
+                padding: 15px 0;
+                gap: 10px;
+            }
+            
+            .logo {
+                font-size: 24px;
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li a {
+                font-size: 16px;
+                padding: 15px;
+                text-align: center;
+                border-left: none;
+                border-radius: 0;
+            }
+            
+            .menu-btn {
+                display: block;
+                position: fixed;
+                left: 20px;
+                top: 20px;
+                z-index: 1001;
+                background-color: #8B0000;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                cursor: pointer;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 移动端菜单按钮 -->
+    <button class="menu-btn" id="menuBtn">&#9776;</button>
+    
+    <!-- 左侧导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">MySite</div>
+            <ul class="nav-links">
+                <li><a href="#home">Homepage</a></li>
+                <li><a href="#registration">Network Registration</a></li>
+                <li><a href="#configuration">Device Configuration</a></li>
+                <li><a href="#findus">Find Us</a></li>
+                <li><a href="#about" style="border-top: 1px solid rgba(255,255,255,0.1)">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 页面内容 -->
+    <div class="content">
+        <section id="home">
+            <h1>Welcome to Our Network Portal</h1>
+            <p>Explore the full range of network services and configuration options</p>
+        </section>
+    </div>
+
+    <script>
+        // 移动端菜单控制
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+        });
+
+        // 点击外部关闭菜单
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && 
+                !e.target.closest('nav') && 
+                !e.target.closest('.menu-btn')) {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
