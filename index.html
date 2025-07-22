@@ -157,7 +157,14 @@
     <!-- <div class="gap-10"></div> -->
     <center>
         <p style="width:90%; text-align: justify; white-space: normal;"> 
-            Unmanned aerial vehicles (UAVs) rely on optical sensors such as cameras and lidar for autonomous operation. However, optical sensors fail under bad lighting, are occluded by debris and adverse weather conditions, struggle in featureless environments, and easily miss transparent surfaces and thin obstacles. In this paper, we question the extent to which optical sensors are sufficient or even necessary for full UAV autonomy. Specifically, we ask: can UAVs autonomously fly without seeing? We present BatMobility, a lightweight mmWave radar-only perception system for autonomous UAVs that completely eliminates the need for any optical sensors. BatMobility enables vision-free autonomy through two key functionalities – radio flow estimation (a novel FMCW radar-based alternative for optical flow based on surface-parallel doppler shift) and radar-based collision avoidance. We build BatMobility using inexpensive commodity sensors and deploy it as a real-time system on a small off-the-shelf quadcopter, showing its compatibility with existing flight controllers. Surprisingly, our evaluation shows that BatMobility achieves comparable or better performance than commercial-grade optical sensors across a wide range of scenarios. 
+            LoRaWAN offers a compelling solution for delivering cost-effective network access to millions of IoT devices worldwide. 
+            However, operators face challenges in scaling their services to meet the growing demands of IoT connections. Moreover, current LoRaWANs foster competition rather than cooperation among coexisting networks, resulting in substantial capacity degradation as network density increases.
+            To identify the root causes limiting LoRaWAN scalability and to enable harmonious coexistence among network operators, this paper conducts an in-depth investigation of operational LoRaWANs. 
+            For the first time, our study reveals that the capacity degradation in LoRaWAN is not due to the traditionally believed issues (such as interference or packet collisions in the wireless medium) but rather a newly identified issue termed \textit{decoder contention problem}. 
+            This problem cannot be effectively resolved using conventional approaches and will significantly hinder the scaled deployment of LoRaWANs as a next-generation global infrastructure.
+            Based on our new findings, we propose design principles that guide our exploration for effective strategies to address this emerging practical problem. 
+            We develop concrete deployable solutions to mitigate contention, optimize spectrum utilization, and promote spectrum sharing among network operators. 
+            Extensive evaluations demonstrate that our strategies effectively boost network capacity close to the theoretical bound, and support the coexistence of up to six networks with significant improvement in spectrum efficiency. 
 </p>
     </center>
 
@@ -304,12 +311,12 @@
 
     <h2 style="text-align: center"> Bibtex </h2>
 	<pre style="background-color: #f4f4f4;">
-@inproceedings{sie2023batmobility,
-  author    = {Sie, Emerson and Liu, Zikun and Vasisht, Deepak},
-  title     = {BatMobility: Towards Flying Without Seeing for Autonomous Drones},
-  booktitle = {ACM International Conference on Mobile Computing (MobiCom)},
-  year      = {2023},
-  doi       = {https://doi.org/10.1145/3570361.3592532},
+@inproceedings{Zhang2025AlphaWAN,
+  title={Towards Next-Generation Global IoT: Empowering Massive Connectivity with Harmonious Multi-Network Coexistence},
+  author={Ziyue Zhang, Xianjin Xia, Ruonan Li, and Yuanqing Zheng},
+  booktitle={Proceedings of the ACM SIGCOMM 2025 Conference},
+  year={2025},
+  doi = {https://doi.org/10.1145/3718958.3750504}
 }
     </pre>
 
@@ -317,7 +324,7 @@
 
 	<b><span style="font-size:22px">Acknowledgements:</span></b><br>
 
-          We thank the reviewers and our anonymous shepherd for their insightful comments and suggestions on improving this paper. This work was supported in part by NSF RINGS Award 2148583. This work was carried out in part in the Intelligent Robotics Laboratory, University of Illinois Urbana-Champaign. We thank John M. Hart for help regarding the flying arena. We thank Shahab Nikkhoo for his guidance and suggestions. We thank Kris Hauser for letting us use his 3D printer. We are grateful to Jayanth Shenoy, Bill Tao, Maleeha Masood, Ishani Janveja, and Om Chabra for their feedback on initial drafts.
+          We sincerely thank our shepherd and the anonymous reviewers for their constructive comments and invaluable suggestions that helped improve this paper. This work is supported by Hong Kong GRF under Grant No. 15218022, 15231424, 15211924, and 15216325.
 
 	<p style="text-align: right"><a href="https://github.com/HaozhiQi/haozhiqi.github.io/tree/master/hora" style="font-size:12px;">Template for this Website</a></p>
 
