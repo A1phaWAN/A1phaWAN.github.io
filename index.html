@@ -160,144 +160,7 @@
 </p>
     </center>
 
-    <!-- <hr>
-
-    <h2 style="text-align: center"> Surface-Parallel Doppler Shift </h2>
-
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        <strong>How can we stabilize a drone using only a downward facing radar?</strong> Although obtaining altitude is straightforward, ground-parallel motion is challenging. Our key insight is that at mmWave frequencies, most ground surfaces appear diffuse to radar. This means ground-parallel motion induces unique patterns in the doppler-angle plane. We can make such patterns apparent even on very low resolution antenna arrays by extending the doppler axis.
-    </p></center>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 row center-row">
-          <video autoplay="" loop="" muted="" playsinline="" src="./resources/spd.mp4" width="100%"></video>
-        </div>
-        <div class="col-md-8">
-          <div class="row">
-            <div class="col-md-12">
-                <strong>Velocity is correlated with the amplitude.</strong>   
-
-               <center>
-                   <video autoplay="" loop="" muted="" playsinline="" src="./resources/anim2-opt.webm" width="100%"></video>
-               </center>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-                <strong>Direction can be found using 2D antenna array.</strong>   
-
-               <center>
-                   <video autoplay="" loop="" muted="" playsinline="" src="./resources/anim3-opt.webm" width="100%"></video>
-               </center>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr> -->
-
-    <!-- <div class="gap-10"></div>
-    <h2 style="text-align: center"> Doppler Flow </h2>
-    <div class="gap-10"></div>
-
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        The previous simulated toy examples assume a perfectly diffuse surface. However, doppler-angle heatmaps generally appear different under various real world conditions due to specularity, multipath, noise, etc. We collect data on various real world surfaces and train a lightweight CNN to regress velocity from imperfect doppler-angle heatmaps. We also convert these to angular flow values for plug-and-play compatibility with existing flight controllers.
-    </p></center>
-
-    <center>
-        <img style="width: 100%;" src="./resources/flow_model.jpg">
-    </center>
-
-    <div class="gap-10"></div>
-
-
-    <div class="row no-gutters">
-        <div class="col">
-            <center><b>Rough Surface (Grass)</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/grass1-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <center><b>Smooth Surface (Concrete)</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/wall1-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="gap-10"></div>
-    <h2 style="text-align: center"> Position Hold </h2>
-    <div class="gap-10"></div>
-
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        We compare loitering behavior of a UAV using (a) a commercial optical flow sensor and (b) BatMobility. In the left, we can see that the UAV is unable to hold its position in featureless or dark environments. In the right, BatMobility uses surface-parallel doppler shift to maintain stability in spite of the lack of visual or geometric ground features.
-    </p></center>
-
-    <div class="row no-gutters">
-        <div class="col">
-            <center><b>Optical Flow</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/optflow_tless3-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <center><b>Doppler Flow</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/batmobility_tless2-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-
-    <div class="row no-gutters">
-        <div class="col">
-            <center><b>Optical Flow</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/optflow_dark2-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <center><b>Doppler Flow</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/batmobility_dark3-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="gap-10"></div>
-    <h2 style="text-align: center"> Velocity Control </h2>
-    <div class="gap-10"></div>
-
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        BatMobility enables feedback-based velocity control in harsh environments (such as in the dark). This enables key action primitives (i.e. move forward, move left, turn right, stop) for vision-free navigation in unstructured environments.
-    </p></center>
-
-    <div class="row no-gutters">
-        <div class="col">
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/batmobility_square1-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/batmobility_square2-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div>
-
-    <hr>
-
-    <h2 style="text-align: center"> Related Work </h2>
-
-    <center>
-        This work is part of our series of research on radar-based perception for robots.<br><br>
-      <table width="100%">
-        <tbody><tr>
-          <td width="100%">
-          <font size="4">
-            <div style="float:left;margin-right:30px;">
-            <video autoplay="" loop="" muted="" src="resources/radarize.mp4" width="360"></video>
-            </div>
-            <b>Radarize: Enhancing Radar SLAM with Generalizable Doppler-Based Odometry</b><br>
-            Emerson Sie, Xinyu Wu, Heyu Guo, Deepak Vasisht<br>
-            MobiSys 2024 <br> <br>
-            <a href="https://arxiv.org/pdf/2311.11260">PDF</a> | 
-            <a href="https://radarize.github.io/">Project Page</a> 
-          </font>
-
-        </td></tr>
-      </tbody></table>
-    </center> -->
+    
 <!-- first section -->
     <hr> 
 
@@ -385,23 +248,7 @@
         Content to be determined
     </p></center>
 
-    <!-- <center>
-        <img style="width: 100%;" src="./resources/flow_model.jpg">
-    </center>
-
-    <div class="gap-10"></div> -->
-
-
-    <!-- <div class="row no-gutters">
-        <div class="col">
-            <center><b>Rough Surface (Grass)</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/grass1-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-        <div class="col">
-            <center><b>Smooth Surface (Concrete)</b></center>
-            <video autoplay="" loop="" muted="" playsinline="" src="./resources/wall1-opt.webm" width="97%" style="border-radius:10px; border:1px solid black"></video>
-        </div>
-    </div> -->
+   
     <div class="row no-gutters">
         <div class="col">
             <center><b>Capacity gain</b></center>
@@ -412,17 +259,6 @@
             <img src="./resources/Spectrum_gain.jpg" style="width: 100%; max-height: 450px; min-height: 150px; object-fit: contain;">
         </div>
     </div>
-
-    <!-- <div class="row no-gutters">
-        <div class="col">
-            <center><b>Capacity gain</b></center>
-            <img src="./resources/capacity_gain.jpg" width="100%" style="border: 1px solid #ccc; border-radius: 10px; ">
-        </div>
-        <div class="col">
-            <center><b>Spectrum gain</b></center>
-            <img src="./resources/Spectrum_gain.jpg" width="100%" style="border: 1px solid #ccc; border-radius: 10px; ">
-        </div>
-    </div> -->
 
     <hr> 
 
