@@ -191,20 +191,31 @@
     <h2 style="text-align: center"> Capacity limitations in operational LoRaWANs </h2>
     <div class="gap-10"></div>
 
-    <center><p style="width:90%; text-align: justify; white-space: normal;">
-        Our empirical studies on real-world operational LoRaWANs reveal substantial capacity degradation in two aspects: 
-		(1) Limited network capacity with significant performance gaps. Operational LoRaWANs support very limited user concurrency (e.g., a maximum of 16 users to actively communicate at the same time). The achievable network capacity of real-world LoRaWANs falls significantly short of the theoretical capacity of LoRaWAN (e.g., <35%) and cannot scale to meet the demands of fast-growing IoT connections worldwide. Moreover, our investigations reveal that extra LoRaWAN gateways may not necessarily yield capacity improvements in practice. 
-		(2) Capacity contention across networks. All LoRaWAN deployments (private and public) share the same unlicensed bands and must contend for communication. Our experiments with operational LoRaWANs reveal that the capacity limit (\ie, 16 concurrent users) not only constrains individual network concurrency but also caps the total concurrency across all coexisting networks. Consequently, each network acquires only a fraction of the limited capacity, which diminishes further as more networks coexist.
-    	These capacity degradations pose a significant scalability challenge, hindering the widespread deployment of LoRaWAN as a global IoT infrastructure.
-	</p></center>
+<center><p style="width:90%; text-align: justify; white-space: normal;">
+Our empirical studies on real-world operational LoRaWANs reveal substantial capacity degradation in two aspects:
+<br><br>
+
+<b>(1) Limited network capacity with significant performance gaps.</b>  
+The achievable capacity of operational LoRaWANs is much lower than the theoretical maximum (e.g., less than 35%).  
+Surprisingly, adding more gateways does not necessarily improve network capacity — the concurrency limit persists even with dense deployments.
+<br><br>
+
+<b>(2) Capacity contention across networks.</b>  
+Since all LoRaWAN deployments operate in the same unlicensed spectrum, they must compete for shared communication resources.  
+Our measurements show that the 16-user concurrency cap applies not only within a single network but across all coexisting networks in a region.  
+This means each network only gets a shrinking fraction of capacity as more networks are deployed nearby.
+<br><br>
+
+These capacity issues pose a fundamental scalability challenge for deploying LoRaWAN as a global IoT infrastructure.
+</p></center>
 
     <div class="row no-gutters">
         <div class="col">
-            <center><b>(1) Limited network capacity with performance gaps</b></center>
+            <center><b>(1) Capacity gaps of a single LoRaWAN</b></center>
             <img src="./resources/1.png" style="width: 100%; max-height: 450px; min-height: 150px; object-fit: contain;">
         </div>
         <div class="col">
-            <center><b>(2) Capacity contention across networks</b></center>
+            <center><b>(2) Capacity when two LoRaWANs coexist</b></center>
             <img src="./resources/2.png" style="width: 100%; max-height: 450px; min-height: 150px; object-fit: contain;">
         </div>
     </div>
@@ -304,5 +315,6 @@
 
 
 </body></html>
+
 
 
