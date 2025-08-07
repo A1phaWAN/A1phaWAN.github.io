@@ -232,8 +232,28 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
     <div class="gap-10"></div>
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
-        Content to be determined
-    </p></center>
+        Existing studies primarily attribute such capacity limitations to packet collisions and interference in the shared wireless medium. 
+		However, our study indicates that even in the absence of packet collisions, LoRaWANs still experience significant capacity gaps due to a newly identified issue termed decoder contention problem. 
+		Our in-depth investigation with operational LoRaWANs identifies four primary factors that contribute to the practical capacity gaps:
+		(1) Limited capability per gateway.
+		A single gateway monitors multiple channels but can only receive a small portion of packets limited by decoder resources (\eg, 16 decoders per gateway).
+		As incoming packets are processed in a First-Come-First-Served (FCFS) way, the later-arriving packets have to be discarded when decoders are fully occupied.
+		(2) Inefficiency with homogeneous reception.
+		Operators typically configure their gateways with standard LoRaWAN channels. 
+		As a result, these gateways operating within the same spectrum observe identical packets in the same order, leading all gateways to receive the early packets while none captures the later ones.
+		(3) Non-optimal operational strategy.
+		LoRaWAN does not associate users with dedicated gateways. 
+		Instead, all gateways within range receive and forward a user's packets. 
+		While this strategy enhances coverage and redundancy, it can also introduce inefficiencies---some users may unnecessarily occupy decoder resources across multiple gateways, while others may be left without access to any decoders.
+    	(4) Inefficient spectrum sharing.
+		Current LoRaWANs lack mechanisms for spectrum sharing among network operators. 
+		In multi-network coexistence scenarios, a gateway operating in the shared spectrum detects packets not only from its own network but also from other coexisting networks.
+		Although LoRaWAN packets include network identifiers, these identifiers cannot be accessed until the packets are successfully decoded. 
+		As a result, packets from all coexisting networks compete for and consume decoder resources at each gateway prior to packet reception or rejection decisions.
+		<br><br>
+
+		Based on these new findings, this paper reveals that the practical capacity gaps observed in operational LoRaWANs are fundamentally caused by the contention for gateway decoder resources among both intra- and inter-network users, rather than by conventional issues such as network interference, packet collision, or spectrum access contention. 
+	</p></center>
 
     <center>
       <center><b>Content to be determined</b></center>
@@ -441,6 +461,7 @@ We select four strategies for implementation in our \projectname system based on
 
 
 </body></html>
+
 
 
 
