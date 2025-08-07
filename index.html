@@ -193,11 +193,14 @@
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
         Our empirical studies on real-world operational LoRaWANs reveal substantial capacity degradation in two aspects: 
-    </p></center>
+		(1) Limited network capacity with significant performance gaps. Operational LoRaWANs support very limited user concurrency (e.g., a maximum of 16 users to actively communicate at the same time). The achievable network capacity of real-world LoRaWANs falls significantly short of the theoretical capacity of LoRaWAN (e.g., <35%) and cannot scale to meet the demands of fast-growing IoT connections worldwide. Moreover, our investigations reveal that extra LoRaWAN gateways may not necessarily yield capacity improvements in practice. 
+		(2) Capacity contention across networks. All LoRaWAN deployments (private and public) share the same unlicensed bands and must contend for communication. Our experiments with operational LoRaWANs reveal that the capacity limit (\ie, 16 concurrent users) not only constrains individual network concurrency but also caps the total concurrency across all coexisting networks. Consequently, each network acquires only a fraction of the limited capacity, which diminishes further as more networks coexist.
+    	These capacity degradations pose a significant scalability challenge, hindering the widespread deployment of LoRaWAN as a global IoT infrastructure.
+	</p></center>
 
     <div class="row no-gutters">
         <div class="col">
-            <center><b>Limited network capacity with significant performance gaps</b></center>
+            <center><b>Limited network capacity with performance gaps</b></center>
             <img src="./resources/1.png" style="width: 100%; max-height: 450px; min-height: 150px; object-fit: contain;">
         </div>
         <div class="col">
@@ -268,17 +271,17 @@
     <div class="gap-10"></div>
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
-        Content to be determined
+        Our large-scale testbed deployment shows that AlphaWAN supports over 140 concurrent users with just 15 gateways and achieves a 3× capacity improvement. It also enables six LoRaWAN networks to coexist while maintaining high per-network throughput and over 85% PRR. The system approaches the theoretical limit of LoRaWAN capacity.
     </p></center>
 
    
     <div class="row no-gutters">
         <div class="col">
-            <center><b>Capacity gain</b></center>
+            <center><b>Capacity gain (single network)</b></center>
             <img src="./resources/capacity_gain.jpg" style="width: 100%; max-height: 450px; min-height: 150px; object-fit: contain;">
         </div>
         <div class="col">
-            <center><b>Spectrum gain</b></center>
+            <center><b>Spectrum gain (Multi-network coexistence)</b></center>
             <img src="./resources/Spectrum_gain.jpg" style="width: 100%; max-height: 450px; min-height: 150px; object-fit: contain;">
         </div>
     </div>
@@ -301,3 +304,4 @@
 
 
 </body></html>
+
