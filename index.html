@@ -220,6 +220,92 @@ These capacity issues pose a fundamental scalability challenge for deploying LoR
         </div>
     </div>
 
+
+
+<!-- second section -->
+    <hr> 
+
+    <div class="gap-10"></div>
+    <h2 style="text-align: center"> Homogeneous channel planning </h2>
+    <div class="gap-10"></div>
+
+<center><p style="width:90%; text-align: justify; white-space: normal;">
+We summarize eight potential strategies for addressing the decoder contention problem in LoRaWAN. These strategies are grouped into four principles: spectrum optimization, resource augmentation, contention management, and network isolation. We evaluate each strategy based on its practical applicability using commodity LoRaWAN gateways and its effectiveness in real deployments.
+</p></center>
+
+<div style="overflow-x: auto; margin: 20px auto; width: 95%;">
+  <table border="1" cellspacing="0" cellpadding="6" style="border-collapse: collapse; width: 100%; font-size: 14px; text-align: left;">
+    <thead style="background-color: #f0f0f0;">
+      <tr>
+        <th>Principles</th>
+        <th>Strategies</th>
+        <th>Implementation Method</th>
+        <th>Practicability</th>
+        <th>Adopted in AlphaWAN?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2"><b>Optimize spectrum utilization</b></td>
+        <td><b>① Improve per-channel resource utilization</b></td>
+        <td>Adjust the number of channels per GW</td>
+        <td>Programmable, supported by COTS GWs</td>
+        <td><b>Yes</b></td>
+      </tr>
+      <tr>
+        <td><b>② Heterogeneous channel configuration</b></td>
+        <td>Diversify channel configurations of GWs</td>
+        <td>Supported by COTS GWs</td>
+        <td><b>Yes</b></td>
+      </tr>
+
+      <tr>
+        <td rowspan="2"><b>Add extra resources</b></td>
+        <td>③ More decoders per GW</td>
+        <td>Upgrade to the newest GWs</td>
+        <td>Not supported by legacy GWs</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>④ More spectrum resources</td>
+        <td>Expand to new frequency bands</td>
+        <td>Limited ISM bands for LoRaWAN</td>
+        <td>No</td>
+      </tr>
+
+      <tr>
+        <td rowspan="3"><b>Manage user contention</b></td>
+        <td>⑤ Smaller cell with shortened transmit range</td>
+        <td>ADR, transmit power control</td>
+        <td>Suboptimal spectrum utilization</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>⑥ Divide large cells into sub-regions</td>
+        <td>Directional antennas</td>
+        <td>Less effective to LoRaWAN</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><b>⑦ Contention management for LoRaWAN</b></td>
+        <td>Joint channel planning and ADR/TPC optimization</td>
+        <td>Supported by COTS GWs and end-nodes</td>
+        <td><b>Yes</b></td>
+      </tr>
+
+      <tr>
+        <td rowspan="2"><b>Isolate coexisting networks</b></td>
+        <td><b>⑧ Spectrum sharing across operators with misaligned channel plans</b></td>
+        <td>Create channel plans per operator with optimal frequency misalignment</td>
+        <td>Supported by COTS GWs and the LoRaWAN standard</td>
+        <td><b>Yes</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+	
+	
 <!-- second section -->
     <hr> 
 
@@ -315,6 +401,7 @@ These capacity issues pose a fundamental scalability challenge for deploying LoR
 
 
 </body></html>
+
 
 
 
