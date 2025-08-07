@@ -231,11 +231,15 @@ This means each network only gets a shrinking fraction of capacity as more netwo
     <hr> 
 
     <div class="gap-10"></div>
-    <h2 style="text-align: center"> Homogeneous channel planning </h2>
+    <h2 style="text-align: center"> Our solutions </h2>
     <div class="gap-10"></div>
 
 <center><p style="width:90%; text-align: justify; white-space: normal;">
-We summarize eight potential strategies for addressing the decoder contention problem in LoRaWAN. These strategies are grouped into four principles: spectrum optimization, resource augmentation, contention management, and network isolation. We evaluate each strategy based on its practical applicability using commodity LoRaWAN gateways and its effectiveness in real deployments.
+We propose four basic design principles and eight strategies to address the decoder contention problem. In-depth investigations are conducted to explore the suitability of proposed strategies for mitigating decoder contention in real-world LoRaWANs. Please see our paper for details. 
+<br><br>
+	
+We select four strategies for implementation in our \projectname system based on three criteria: (1) no modification to COTS hardware or the underlying protocol; (2) compatibility with legacy systems; and (3) compliance with LoRaWAN and ISM band regulations. We evaluate each strategy based on its practical applicability using commodity LoRaWAN gateways and its effectiveness in real deployments.
+<br><br>
 </p></center>
 
 <div style="overflow-x: auto; margin: 20px auto; width: 95%;">
@@ -250,6 +254,8 @@ We summarize eight potential strategies for addressing the decoder contention pr
       </tr>
     </thead>
     <tbody>
+
+      <!-- Principle 1 -->
       <tr>
         <td rowspan="2"><b>Optimize spectrum utilization</b></td>
         <td><b>① Improve per-channel resource utilization</b></td>
@@ -264,20 +270,22 @@ We summarize eight potential strategies for addressing the decoder contention pr
         <td><b>Yes</b></td>
       </tr>
 
-      <tr>
+      <!-- Principle 2 (with background shading) -->
+      <tr style="background-color: #f5f5f5;">
         <td rowspan="2"><b>Add extra resources</b></td>
         <td>③ More decoders per GW</td>
         <td>Upgrade to the newest GWs</td>
         <td>Not supported by legacy GWs</td>
         <td>No</td>
       </tr>
-      <tr>
+      <tr style="background-color: #f5f5f5;">
         <td>④ More spectrum resources</td>
         <td>Expand to new frequency bands</td>
         <td>Limited ISM bands for LoRaWAN</td>
         <td>No</td>
       </tr>
 
+      <!-- Principle 3 -->
       <tr>
         <td rowspan="3"><b>Manage user contention</b></td>
         <td>⑤ Smaller cell with shortened transmit range</td>
@@ -298,16 +306,19 @@ We summarize eight potential strategies for addressing the decoder contention pr
         <td><b>Yes</b></td>
       </tr>
 
-      <tr>
+      <!-- Principle 4 (with background shading) -->
+      <tr style="background-color: #f5f5f5;">
         <td rowspan="2"><b>Isolate coexisting networks</b></td>
         <td><b>⑧ Spectrum sharing across operators with misaligned channel plans</b></td>
         <td>Create channel plans per operator with optimal frequency misalignment</td>
         <td>Supported by COTS GWs and the LoRaWAN standard</td>
         <td><b>Yes</b></td>
       </tr>
+
     </tbody>
   </table>
 </div>
+
 
 	
 	
@@ -406,6 +417,7 @@ We summarize eight potential strategies for addressing the decoder contention pr
 
 
 </body></html>
+
 
 
 
