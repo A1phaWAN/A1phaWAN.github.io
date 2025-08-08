@@ -243,7 +243,7 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
 	    A single gateway monitors multiple channels but can only receive a small portion of packets limited by decoder resources (e.g., 16 decoders per gateway).
 	    As incoming packets are processed in a First-Come-First-Served (FCFS) way, later-arriving packets are discarded when decoders are fully occupied.
 	    <br><br>
-	    <img src="./resources/Problem_formulation.pdf.png" style="width:60%; display:block; margin:auto;">
+	    <img src="./resources/Sec3_COTS_mechanism_gw.png" style="width:60%; display:block; margin:auto;">
 	</div>
 		
 	<div style="margin-bottom: 25px;">
@@ -251,7 +251,7 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
 	    Operators typically configure their gateways with standard LoRaWAN channels.
 	    As a result, these gateways operating within the same spectrum observe identical packets in the same order, leading all gateways to receive the early packets while none captures the later ones.
 	    <br><br>
-	    <img src="./resources/decoder2.png" style="width:60%; display:block; margin:auto;">
+	    <img src="./resources/Channel_plan.png" style="width:60%; display:block; margin:auto;">
 	</div>
 		
 	<div style="margin-bottom: 25px;">
@@ -260,7 +260,7 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
 	    Instead, all gateways within range receive and forward a user's packets.
 	    While this strategy enhances coverage and redundancy, it can also introduce inefficiencies — some users may unnecessarily occupy decoder resources across multiple gateways, while others may be left without any decoders.
 	    <br><br>
-	    <img src="./resources/decoder3.png" style="width:60%; display:block; margin:auto;">
+	    <img src="./resources/LoRaWAN_architecture2.png" style="width:60%; display:block; margin:auto;">
 	</div>
 
 	<div style="margin-bottom: 25px;">
@@ -270,7 +270,7 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
 		Although LoRaWAN packets include network identifiers, these identifiers cannot be accessed until the packets are successfully decoded. 
 		As a result, packets from all coexisting networks compete for and consume decoder resources at each gateway prior to packet reception or rejection decisions.
 		<br><be>
-    	<img src="./resources/decoder4.png" style="width:60%; display:block; margin:auto;">
+    	<img src="./resources/Sec3_COTS_mechanism_pipeline.png" style="width:60%; display:block; margin:auto;">
 	</div>
 
 		<!--Based on these new findings, this paper reveals that the practical capacity gaps observed in operational LoRaWANs are fundamentally caused by the contention for gateway decoder resources among both intra- and inter-network users, rather than by conventional issues such as network interference, packet collision, or spectrum access contention. -->
@@ -408,7 +408,7 @@ We select four strategies for implementation in our \projectname system based on
         <div class="col">
 			<div style="display: flex; flex-direction: column; align-items: center;">
             	<b>Content to be determined</b>
-            	<img src="./resources/Sec4_4_overlap_channel_plan.pdf.png" style="width: 60%; max-height: 450px; min-height: 150px; object-fit: contain; margin-top: 10px;">
+            	<img src="./resources/Sec4_4_overlap_channel_plan.png" style="width: 60%; max-height: 450px; min-height: 150px; object-fit: contain; margin-top: 10px;">
         	</div>
 		</div>
         <div class="col">
@@ -482,6 +482,7 @@ We select four strategies for implementation in our \projectname system based on
 
 
 </body></html>
+
 
 
 
