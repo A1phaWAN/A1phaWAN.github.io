@@ -419,15 +419,20 @@ We select four strategies for implementation in our \projectname system based on
     <hr> 
 
     <div class="gap-10"></div>
-    <h2 style="text-align: center"> Strategy: Homogeneous channel planning </h2>
+    <h2 style="text-align: center"> Strategy: Heterogeneous channel planning </h2>
     <div class="gap-10"></div>
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
-        Content to be determined
+        <!--Strategy ② addresses the decoder contention problem by proactively configuring LoRaWAN gateways with heterogeneous channels.-->
+		Heterogeneous channel configuration enables co-located gateways to detect distinct sets of packets across different frequencies, with each gateway observing a unique subset of users contending for its decoder resources. 
+		This increases the likelihood that a packet arriving late at one gateway may be received earlier at another, thereby improving the chances of successful reception. Consequently, packets from delayed users, which would otherwise be dropped by all gateways in current LoRaWANs, gain a new opportunity for delivery. 
+		Importantly, this strategy allows the decoder resources of multiple gateways to be utilized collectively, enhancing the system’s ability to receive additional packets. 
+		<!--A feasibility study is presented in \figureautorefname~\ref{fig:sec4_2_overall}b. As the three gateways operate with heterogeneous channels, a capacity improvement from 16 to 24 concurrent users is observed. 
+		We expect higher gains by employing more gateways and optimizing their frequency plans. -->
     </p></center>
 
     <center>
-      <center><b>Content to be determined</b></center>
+      <center><b>  </b></center>   <!-- title of strategy 2 -->
         <img style="width: 100%;" src="./resources/Problem_formulation.pdf.png">
     </center>
 
@@ -435,23 +440,38 @@ We select four strategies for implementation in our \projectname system based on
    <hr> 
 
     <div class="gap-10"></div>
-    <h2 style="text-align: center"> Strategy: Spectrum sharing with misaligned channel plans </h2>
+    <h2 style="text-align: center"> Strategy ⑧: Spectrum sharing with misaligned channel plans </h2>
     <div class="gap-10"></div>
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
-        Content to be determined
+	Strategy ⑧ isolates the users of coexisting networks by operating co-located LoRaWANs with distinctive frequency plans. The channels of coexisting networks should maintain proper frequency misalignment.
+	This frequency misalignment could allow COTS LoRaWAN devices to exploit the inherent frequency selectivity of radio hardware to isolate packets from other co-located networks. 
+<!--Specifically, when a radio operates on a channel, the radio hardware truncates signals outside the frequency ranges of that intended channel (termed \textit{frequency selectivity}). 
+Packets not belonging to the intended network, due to frequency misalignment, would be truncated and dropped, not flowing into the following radio pipeline of packet decoding. 
+Only packets intended for the network can flow into the pipeline and consume decoder resources for packet reception.
+Packets from different co-located networks are thus naturally separated without incurring cross-network decoder contentions.-->
+	AlphaWAN facilitates spectrum sharing by implementing Strategy ⑧. 
+<!--It involves different operators defining and maintaining distinctive operating channels with suitable frequency misalignment. -->
+	It shifts the responsibilities of channel division and maintenance from individual operators to a centralized Master node. 
+	The Master estimates the maximum number of networks coexisting in a region and selects a frequency misalignment to divide the LoRaWAN spectrum into frequency-overlapping sub-channels.
+		<!--
+Operators should register with the Master before deploying LoRaWAN infrastructure in a region. 
+The \projectname Master keeps an up-to-date record of channel occupancy in the area and assigns channels to operators based on their requests. 
+As illustrated in \figureautorefname~\ref{fig:sec5_Fedwan_master}, different operators receive unique channel plans to minimize potential inter-network interference. 
+Operators use the allocated channels to configure gateways and end nodes (\eg, through intra-network channel planning), ensuring the smooth operation of their networks in the region.
+		-->
     </p></center>
 
     <div class="row no-gutters">
         <div class="col">
 			<div style="display: flex; flex-direction: column; align-items: center;">
-            	<b>Content to be determined</b>
+            	<b>Frequency misalignment</b>
             	<img src="./resources/Sec4_4_overlap_channel_plan.png" style="width: 60%; max-height: 450px; min-height: 150px; object-fit: contain; margin-top: 10px;">
         	</div>
 		</div>
         <div class="col">
 			<div style="display: flex; flex-direction: column; align-items: center;">
-            	<b>Content to be determined</b>
+            	<b>Spectrum sharing in AlphaWAN</b>
             	<img src="./resources/Sec5_3_spectrum_sharing.pdf.png" style="width: 60%; max-height: 450px; min-height: 150px; object-fit: contain;  margin-top: 10px;">
         	</div>
 		</div>
@@ -465,11 +485,12 @@ We select four strategies for implementation in our \projectname system based on
     <div class="gap-10"></div>
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
-        Content to be determined
+		AlphaWAN operates over the backhaul of a LoRaWAN network, with core components running on the LoRaWAN network server and various application-layer agents running on gateways.  
+		AlphaWAN can be readily implemented with COTS gateways and does not require any hardware modifications to deployed LoRa nodes, which allows smooth upgrade of today's LoRaWAN infrastructure. 
     </p></center>
 
         <center>
-      <center><b>Content to be determined</b></center>
+      <center><b>System architecture of AlphaWAN</b></center>
         <img style="width: 100%;" src="./resources/System_architecture.pdf.png">
     </center>
 
@@ -520,6 +541,7 @@ We select four strategies for implementation in our \projectname system based on
 
 
 </body></html>
+
 
 
 
