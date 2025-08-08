@@ -228,13 +228,17 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
     <hr> 
 
     <div class="gap-10"></div>
-    <h2 style="text-align: center"> Decoder contention problem </h2>
+    <h2 style="text-align: center"> Our findings </h2>
     <div class="gap-10"></div>
 
     <center><p style="width:90%; text-align: justify; white-space: normal;">
-        <!-- Existing studies primarily attribute such capacity limitations to packet collisions and interference in the shared wireless medium. -->
+        <!-- Existing studies primarily attribute such capacity limitations to packet collisions and interference in the shared wireless medium. 
 		Our study indicates that even in the absence of packet collisions, LoRaWANs still experience significant capacity gaps due to a newly identified issue termed <i>decoder contention problem</i>. 
-		Four primary factors contribute to this problem:
+		Four primary factors contribute to this problem:  -->
+		Existing studies primarily attribute such capacity limitations to packet collisions and interference in the shared wireless medium.
+		However, our study indicates that even in the absence of packet collisions, LoRaWANs still experience significant capacity gaps. 
+		Our in-depth investigation identifies four primary factors that contribute to the practical capacity gaps:
+		<!--Our in-depth investigation with operational LoRaWANs (as detailed in \S~\ref{sec:capacity-study}) identifies four primary factors that contribute to the practical capacity gaps:-->
 		<br><br>
 		
 	
@@ -320,6 +324,36 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
     </center>
 -->
 
+<!-- second section -->
+    <hr> 
+
+    <div class="gap-10"></div>
+    <h2 style="text-align: center"> Decoder Contention Problem </h2>
+    <div class="gap-10"></div>
+
+	<center><p style="width:90%; text-align: justify; white-space: normal;">
+		In summary, the capacity gaps observed in operational LoRaWANs are fundamentally caused by the <i>Decoder Contention Problem</i> as follows:<br>
+		The practical capacity of a LoRaWAN is limited by the decoder resources of gateways. Suboptimal LoRaWAN operating strategies, such as homogeneous channel configurations across gateways and coexisting networks, lead to intensive contentions for gateway decoder resources among both intra- and inter-network users.
+		These contentions are further intensified by LoRaWAN's unique characteristics, including operation in unlicensed ISM bands, long communication range, and the absence of user-gateway association. 
+		Specifically, because LoRaWAN allows any gateway within range to receive and forward packets from any user, some users unnecessarily consume decoder resources at multiple gateways, while others fail to access any available decoders. 
+		These factors collectively contribute to the practical capacity gaps of LoRaWANs.	
+		<br><br>
+
+		<!--
+		To investigate the practical implications of the decoder contention problem, we record and analyze packet loss in real-world LoRaWAN deployments, classifying the causes into three categories: decoder contention, channel contention (\ie, multiple nodes using identical transmission settings), and other factors (interference, poor SNRs, \etc). 
+		The results are presented in \figureautorefname~\ref{fig:packetloss-factors}.
+		Notably, while channel contention is traditionally considered the dominant source of packet loss in large-scale LoRaWANs \cite{Chior:SIGCOMM17, CIC_sigcomm'21, PCube:MobiCom21}, our results reveal that decoder contention becomes more critical as the network size surpasses 3,000 users, as shown in \figureautorefname~\ref{fig:packetloss-factors}a. %This turning point drops to 2,000 users per network when two LoRaWANs coexist, where both intra- and inter-network decoder contention contribute comparably to packet loss.
+		Even in smaller-scale deployments (\eg, {1,000 users per network}), cross-network decoder contention emerges as the leading cause of packet loss when three or more networks coexist (see \figureautorefname~\ref{fig:packetloss-factors}b). 
+		These results call for urgent and targeted solutions to address decoder contention, particularly in the context of large-scale and coexisting LoRaWAN deployments.
+		<br><br>
+	</p></center>
+	
+	    <center>
+     		 <center><b> Figure: Decoder contention problem </b></center>   
+        	 <img style="width: 60%;" src="./resources/Problem_formulation.pdf.png">
+   		</center>
+		-->
+	
 <!-- second section -->
     <hr> 
 
@@ -541,6 +575,7 @@ Operators use the allocated channels to configure gateways and end nodes (\eg, t
 
 
 </body></html>
+
 
 
 
