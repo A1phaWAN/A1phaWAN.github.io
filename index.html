@@ -193,18 +193,18 @@
 
 <center><p style="width:90%; text-align: justify; white-space: normal;">
 Our empirical studies on real-world operational LoRaWANs reveal substantial capacity degradation in two aspects:
-<br><br>
+<br>
 
 <b>(1) Limited network capacity with significant performance gaps.</b>  
 The achievable capacity of operational LoRaWANs is much lower than the theoretical maximum (e.g., less than 35%).  
 Moreover, our investigations reveal that extra LoRaWAN gateways may not necessarily yield capacity improvements in practice. 
-<br><br>
+<br>
 
 <b>(2) Capacity contention across networks.</b>  
 Since all LoRaWAN deployments operate in the same unlicensed spectrum, they must compete for shared communication resources.  
 Our experiments with operational LoRaWANs reveal that the capacity limit (\ie, 16 concurrent users) not only constrains individual network concurrency but also caps the total concurrency across all coexisting networks. 
 Consequently, each network acquires only a fraction of the limited capacity, which diminishes further as more networks coexist.
-<br><br>
+<br>
 
 <!--These capacity issues pose a fundamental scalability challenge for deploying LoRaWAN as a global IoT infrastructure.-->
 </p></center>
@@ -239,7 +239,7 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
 	</p>
 		
 	<div style="margin-bottom: 25px;">
-	    <b>1) Limited capability per gateway.</b><br>
+	    <b>1) Limited capability per gateway.</b>
 	    A single gateway monitors multiple channels but can only receive a small portion of packets limited by decoder resources (e.g., 16 decoders per gateway).
 	    As incoming packets are processed in a First-Come-First-Served (FCFS) way, later-arriving packets are discarded when decoders are fully occupied.
 	    <br><br>
@@ -247,19 +247,19 @@ Consequently, each network acquires only a fraction of the limited capacity, whi
 	</div>
 		
 	<div style="margin-bottom: 25px;">
-	    <b>2) Inefficiency with homogeneous reception.</b><br>
+	    <b>2) Inefficiency with homogeneous reception.</b>
 	    Operators typically configure their gateways with standard LoRaWAN channels.
 	    As a result, these gateways operating within the same spectrum observe identical packets in the same order, leading all gateways to receive the early packets while none captures the later ones.
-	    <br><br>
+	    <br>
 	    <img src="./resources/Channel_plan.png" style="width:60%; display:block; margin:auto;">
 	</div>
 		
 	<div style="margin-bottom: 25px;">
-	    <b>3) Non-optimal operational strategy.</b><br>
+	    <b>3) Non-optimal operational strategy.</b>
 	    LoRaWAN does not associate users with dedicated gateways.
 	    Instead, all gateways within range receive and forward a user's packets.
 	    While this strategy enhances coverage and redundancy, it can also introduce inefficiencies — some users may unnecessarily occupy decoder resources across multiple gateways, while others may be left without any decoders.
-	    <br><br>
+	    <br>
 	    <img src="./resources/LoRaWAN_architecture2.png" style="width:60%; display:block; margin:auto;">
 	</div>
 
@@ -482,6 +482,7 @@ We select four strategies for implementation in our \projectname system based on
 
 
 </body></html>
+
 
 
 
